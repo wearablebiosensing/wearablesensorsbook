@@ -6,15 +6,15 @@ features = [];
 for file_no = 1:10
     file_no2 = int2str(file_no);
     disp(file_no);
-    label = load('label_10subs.mat'); %1 is healthy 0 is PD
+    label = load('../Data/label_10subs.mat'); %1 is healthy 0 is PD
     analysis_side = 1; %Left:1, Right: 0
     vblNames = {'Timestamp','Accx','Accy','Accz','Gyrx','Gyry','Gyrz'};
 
 
-    left_fname = dir("handflip_case_study/"+file_no2+"_left*").folder+"/"+dir("handflip_case_study/"+file_no+"_left*").name;
+    left_fname = dir("../Data/"+file_no2+"_left*").folder+"/"+dir("../Data/"+file_no+"_left*").name;
     left_flip = readtable(left_fname);     
 
-    right_fname = dir("handflip_case_study/"+file_no2+"_right*").folder+"/"+dir("handflip_case_study/"+file_no+"_right*").name;
+    right_fname = dir("../Data/"+file_no2+"_right*").folder+"/"+dir("../Data/"+file_no+"_right*").name;
     right_flip = readtable(right_fname);
     % % 
     % Timestamp = left_flip.Timestamp;
